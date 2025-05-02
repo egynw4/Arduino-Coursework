@@ -68,7 +68,7 @@ clear
 % Insert answers here
 a = arduino("COM3", "Uno");
 
-duration = input("Enter Test Duration: ");
+i = 0;
 V0 = 0.5;
 Tc = 0.01;
 output = [];
@@ -91,7 +91,10 @@ while V0 == 0.5;
         output = [output, sprintf('Minute\t\t%d\n', minute)];
         output = [output,sprintf('Temperature\t%04.2f C\n\n', temperatureArray(i+1))];
     end
+
+    i = i+1;
 end
+
 output = [output, sprintf('Max temp\t%04.2f C\n', max(temperatureArray(1,:)))];
 output = [output, sprintf('Min temp\t%04.2f C\n', min(temperatureArray(1,:)))];
 output = [output, sprintf('Mean temp \t%04.2f C\n\n', mean(temperatureArray(1,:)))];
@@ -105,6 +108,7 @@ clear
 a = arduino("COM3", "Uno");
 
 duration = input("Enter Test Duration: ");
+changeTime = input("Time for Rate of Change: ");
 V0 = 0.5;
 Tc = 0.01;
 
