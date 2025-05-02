@@ -10,9 +10,6 @@ plot(xplot, yplot, LineWidth=1.5,Color="b");
 xlabel = "Time (s)";
 ylabel = "Temperature (C)";
 
-
-
-
 if temperatureArray(1, i+1) > 24;
     for j = 1:2
         writeDigitalPin(a, 'D8', 0);
