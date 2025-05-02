@@ -8,6 +8,7 @@
 clear
 % Insert answers here
 a = arduino("COM3", "Uno");
+save('Nathan_Wood_20651483.m', 'a');
 
 for i = 1:10
     writeDigitalPin(a,'D13',1);
@@ -62,8 +63,44 @@ fprintf(file_one, output);
 fclose(file_one);
 
 %% TASK 2 - LED TEMPERATURE MONITORING DEVICE IMPLEMENTATION [25 MARKS]
-
+clc
+clear
 % Insert answers here
+a = arduino("COM3", "Uno");
+
+duration = input("Enter Test Duration: ");
+V0 = 0.5;
+Tc = 0.01;
+output = [];
+initialMessage = sprintf("Data Logging Initiated "+ string(date));
+locationMessage = sprintf("Location - Nottingham \n");
+
+disp(initialMessage)
+disp(locationMessage)
+
+for i = 0:duration
+    voltage = readVoltage(a, "A0");
+    voltageArray(1, i+1) = voltage - V0;
+    temperatureArray(1,i+1) = voltageArray(1,i+1) ./ Tc;
+    temperatureArray(2, i+1) = i;
+    pause(1)
+    disp(i);
+    temp_monitor;
+
+    if rem(i, 60) == 0
+        minute = i / 60;
+        output = [output, sprintf('Minute\t\t%d\n', minute)];
+        output = [output,sprintf('Temperature\t%04.2f C\n\n', temperatureArray(i+1))];
+    end
+
+output = [output, sprintf('Max temp\t%04.2f C\n', max(temperatureArray(1,:)))];
+output = [output, sprintf('Min temp\t%04.2f C\n', min(temperatureArray(1,:)))];
+output = [output, sprintf('Mean temp \t%04.2f C\n\n', mean(temperatureArray(1,:)))];
+
+
+end
+
+disp(output);
 
 
 %% TASK 3 - ALGORITHMS – TEMPERATURE PREDICTION [25 MARKS]
