@@ -1,0 +1,36 @@
+%temp_monitor takes the data from the below code and provides an output based on the value it receives. 
+%If the value is >24, the red light will blink every 0.25 secs
+%If the value is <18, the amber light will blink every 0.5 seconds
+%Otherwise the green light will remain on.
+%This will allow for simple monitoring of the temperature in the cabin, being able to quickly assertain a rough reading of the temperature without having to look at a thermometer
+
+yplot = temperatureArray(1,:);
+xplot = temperatureArray(2,:);
+plot(xplot, yplot, LineWidth=1.5,Color="b");
+xlabel = "Time (s)";
+ylabel = "Temperature (C)";
+
+
+
+
+if temperatureArray(1, i+1) > 24;
+    for j = 1:2
+        writeDigitalPin(a, 'D8', 0);
+        writeDigitalPin(a, 'D10', 1);
+        pause(0.25);
+        writeDigitalPin(a, 'D10', 0);
+        pause(0.25);
+    end
+end
+
+if temperatureArray(1, i+1) < 18;
+    writeDigitalPin(a, 'D8', 0);
+    writeDigitalPin(a,'D9', 1);
+    pause(0.5);
+    writeDigitalPin(a,'D9', 0);
+    pause(0.5);
+end
+
+if temperatureArray(1, i+1) > 18 & temperatureArray(1, i+1) < 24;
+    writeDigitalPin(a, 'D8', 1);
+end
