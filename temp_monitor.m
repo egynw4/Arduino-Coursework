@@ -30,4 +30,5 @@ end
 
 if temperatureArray(1, i+1) > 18 & temperatureArray(1, i+1) < 24;
     writeDigitalPin(a, 'D8', 1);
+    pause(1);
 end
