@@ -64,7 +64,7 @@ fclose(file_one);
 %% TASK 2 - LED TEMPERATURE MONITORING DEVICE IMPLEMENTATION [25 MARKS]
 
 % Insert answers here
-matlab.git.clearCredential("https://github.com/egynw4/Arduino-Coursework.git")
+
 
 %% TASK 3 - ALGORITHMS – TEMPERATURE PREDICTION [25 MARKS]
 
