@@ -1,37 +1,37 @@
 Minute		0
-Temperature	55.08 C
+Temperature	30.65 C
 
 Minute		1
-Temperature	55.08 C
+Temperature	29.18 C
 
 Minute		2
-Temperature	55.57 C
+Temperature	29.67 C
 
 Minute		3
-Temperature	55.57 C
+Temperature	29.67 C
 
 Minute		4
-Temperature	55.08 C
+Temperature	29.18 C
 
 Minute		5
-Temperature	56.06 C
+Temperature	29.18 C
 
 Minute		6
-Temperature	56.06 C
+Temperature	28.69 C
 
 Minute		7
-Temperature	56.06 C
+Temperature	28.69 C
 
 Minute		8
-Temperature	56.06 C
+Temperature	28.69 C
 
 Minute		9
-Temperature	56.06 C
+Temperature	29.18 C
 
 Minute		10
-Temperature	56.06 C
+Temperature	28.69 C
 
-Max temp	60.95 C
-Min temp	54.59 C
-Mean temp 	57.22 C
+Max temp	30.65 C
+Min temp	28.20 C
+Mean temp 	29.07 C
 
